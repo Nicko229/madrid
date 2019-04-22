@@ -7,7 +7,7 @@ class App extends Component {
   componentDidMount = () => {
     axios.get('http://localhost:4000/products')
       .then(res => {
-        console.log(res);
+        console.log(res.data);
         res.json();
       })
       .catch(error => {

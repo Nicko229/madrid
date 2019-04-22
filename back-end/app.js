@@ -4,11 +4,12 @@ const app = express();
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+require('dotenv').config()
 
 const productRoutes = require('./api/routes/products');
 
 // changed localhost to 27017 from 27018
-mongoose.connect('mongodb://localhost:27017/book-store', {
+mongoose.connect('mongodb+srv://Nicko229:' + process.env.MONGODB_PASSWORD + '@bookstore-t6zd8.mongodb.net/test?retryWrites=true', {
   useNewUrlParser: true
 });
 
