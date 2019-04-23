@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom'
 // import ProductDetailComponent from './ProductDetailComponent';
 import './ProductListContainer.css';
 
-class App extends Component {
+class ProductListContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -34,20 +34,20 @@ class App extends Component {
   render() {
     const image = this.state.books.map(val => {
       return (
-        <div>
+        <div className="store-parent">
           <div className="image-div">
             <img className="images" src={val.image} />
-            <p>{val.title}</p>
-            <p>{val.author}</p>
+            <p className="book-text">{val.title}</p>
+            <p className="book-text">{val.author}</p>
+            <Popup className="popup" trigger={<button>See More</button>} position="center">
+              <img className="images" src={val.image} />
+              <p>{val.title}</p>
+              <p>{val.author}</p>
+              <p>{val.description}</p>
+              <p>${val.price}</p>
+            </Popup>
           </div>
-          <Popup trigger={<button>See More</button>} position="center">
-            <img className="images" src={val.image} />
-            <p>{val.title}</p>
-            <p>{val.author}</p>
-            <p>{val.description}</p>
-            <p>${val.price}</p>
 
-          </Popup>
           {/* <ProductDetailComponent /> */}
         </div>
       )
@@ -64,4 +64,4 @@ class App extends Component {
 
 
 
-export default App;
+export default ProductListContainer;

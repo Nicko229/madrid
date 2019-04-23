@@ -6,7 +6,7 @@ export default class Banner extends Component {
     return (
       <div className="banner-container">
         <h2 className="first-title">Detective Bookstore</h2>
-        <p className="second-title">Your number 1 online store for you thriller fix </p>
+        <p className="second-title">Your number 1 online store for your thriller fix </p>
       </div>
     )
   }
