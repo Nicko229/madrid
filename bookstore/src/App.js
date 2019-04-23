@@ -14,30 +14,13 @@ class App extends Component {
     }
   }
 
-  componentDidMount = () => {
-    axios.get('http://localhost:4000/products')
-      .then(res => {
-        // console.log(res.data);
-        this.setState({ books: res.data });
-        console.log(res.data)
-        // res.json();
-      })
-      .catch(error => {
-        console.log(error)
-      })
-  }
-
-
-  // create an onClick function that saves the image id when it is clicked.
-
-
   render() {
     return (
       <BrowserRouter>
         <Switch>
           <Route path="/ProductListContainer" component={ProductListContainer} />
-          <Route path="/ProductDetailComponent" component=
-            {ProductDetailComponent} />
+          {/* <Route path="/ProductDetailComponent" component=
+            {ProductDetailComponent} /> */}
         </Switch>
       </BrowserRouter>
     )
