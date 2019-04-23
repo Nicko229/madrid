@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import axios from 'axios';
 import Banner from './Banner';
+import ProductListContainer from './ProductListContainer';
+import ProductDetailComponent from './ProductDetailComponent';
 import './App.css';
 
 class App extends Component {
@@ -29,23 +32,15 @@ class App extends Component {
 
 
   render() {
-    const image = this.state.books.map(val => {
-      return (
-        <div className="image-div">
-          <a href="www.google.com">
-            <img className="images" src={val.image} />
-            <p>{val.title}</p>
-            <p>{val.author}</p>
-          </a>
-        </div>
-      )
-    })
     return (
-      <div className="App">
-        <Banner />
-        {image}
-      </div>
-    );
+      <BrowserRouter>
+        <Switch>
+          <Route path="/ProductListContainer" component={ProductListContainer} />
+          <Route path="/ProductDetailComponent" component=
+            {ProductDetailComponent} />
+        </Switch>
+      </BrowserRouter>
+    )
   }
 }
 

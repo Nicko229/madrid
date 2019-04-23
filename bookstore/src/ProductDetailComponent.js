@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 export default class ProductDetailComponent extends React.Component {
   constructor(props) {
@@ -8,21 +9,21 @@ export default class ProductDetailComponent extends React.Component {
     }
   }
 
-  componentDidMount = () => {
-    this.setState({ isSelected: true })
-    axios.get('http://localhost:4000/products')
-      .then(res => {
-        console.log(res);
-        res.json();
-      })
-      .catch(error => {
-        console.log(error)
-      })
-  }
+  // componentDidMount = () => {
+  //   this.setState({ isSelected: true })
+  //   axios.get('http://localhost:4000/products')
+  //     .then(res => {
+  //       console.log(res);
+  //       res.json();
+  //     })
+  //     .catch(error => {
+  //       console.log(error)
+  //     })
+  // }
 
   render() {
     return (
-      <div>hello</div>
+      <div>Product Detail Component</div>
     )
   }
 }
