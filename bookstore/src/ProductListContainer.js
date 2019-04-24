@@ -47,8 +47,6 @@ class ProductListContainer extends Component {
               <p>${val.price}</p>
             </Popup>
           </div>
-
-          {/* <ProductDetailComponent /> */}
         </div>
       )
     })
@@ -56,7 +54,6 @@ class ProductListContainer extends Component {
       <div className="App" >
         <Banner />
         {image}
-        {/* <ProductDetailComponent /> */}
       </div>
     );
   }

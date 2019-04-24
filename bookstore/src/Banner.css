@@ -1,7 +1,18 @@
 .banner-container {
-  height: 10vh;
   width: 100vw;
-  background-color: #403042;
+  background-color: green;
   color: white;
   text-align: center;
+  height: 6em;
+}
+
+.first-title {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-top: 0.2em;
+}
+
+.second-title { 
+  margin-block-start: 1em;
+  margin-block-end: 0;
 }
