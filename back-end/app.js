@@ -1,5 +1,4 @@
 const express = require('express');
-// const router = express.Router();
 const app = express();
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
@@ -12,10 +11,6 @@ const productRoutes = require('./api/routes/products');
 mongoose.connect('mongodb+srv://Nicko229:' + process.env.MONGODB_PASSWORD_FREE + '@books-jksv6.mongodb.net/test?retryWrites=true', {
   useNewUrlParser: true
 });
-
-// 'mongodb+srv://Nicko229:' + process.env.MONGODB_PASSWORD + '@bookstore-t6zd8.mongodb.net/test?retryWrites=true'
-
-
 
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
