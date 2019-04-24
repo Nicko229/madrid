@@ -8,10 +8,14 @@ require('dotenv').config()
 
 const productRoutes = require('./api/routes/products');
 
-// changed localhost to 27017 from 27018
-mongoose.connect('mongodb+srv://Nicko229:' + process.env.MONGODB_PASSWORD + '@bookstore-t6zd8.mongodb.net/test?retryWrites=true', {
+
+mongoose.connect('mongodb+srv://Nicko229:' + process.env.MONGODB_PASSWORD_FREE + '@books-jksv6.mongodb.net/test?retryWrites=true', {
   useNewUrlParser: true
 });
+
+// 'mongodb+srv://Nicko229:' + process.env.MONGODB_PASSWORD + '@bookstore-t6zd8.mongodb.net/test?retryWrites=true'
+
+
 
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
