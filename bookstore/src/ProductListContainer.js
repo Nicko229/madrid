@@ -16,7 +16,7 @@ class ProductListContainer extends Component {
     axios.get('http://localhost:4000/products')
       .then(res => {
         this.setState({ books: res.data });
-        console.log("state: ", this.state.books)
+        console.log("state: ", this.state.books.slice(0, 9))
       })
       .catch(error => {
         console.log(error)
