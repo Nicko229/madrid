@@ -19,7 +19,7 @@ class ProductListContainer extends Component {
       .then(res => {
         // console.log(res.data);
         this.setState({ books: res.data });
-        console.log("state: ", this.state.books[0].title)
+        console.log("state: ", this.state.books)
         // res.json();
       })
       .catch(error => {
