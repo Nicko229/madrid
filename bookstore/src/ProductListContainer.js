@@ -49,7 +49,7 @@ class ProductListContainer extends Component {
   }
 }
 
-// VERY shaky abou this!
+// VERY shaky abou
 ProductListContainer.propTypes = {
   fetchBooks: PropTypes.func.isRequired,
   books: PropTypes.array.isRequired
