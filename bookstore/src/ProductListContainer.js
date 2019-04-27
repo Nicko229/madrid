@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+import { connect } from 'react-redux';
+// import axios from 'axios';
 import Banner from './Banner';
 import Popup from 'reactjs-popup';
+import fetchBooks from './actions/getActions';
+import PropTypes from 'prop-types';
 import './ProductListContainer.css';
 
 class ProductListContainer extends Component {
@@ -12,19 +15,12 @@ class ProductListContainer extends Component {
     }
   }
 
-  componentDidMount = () => {
-    axios.get('http://localhost:4000/products')
-      .then(res => {
-        this.setState({ books: res.data });
-        console.log("state: ", this.state.books)
-      })
-      .catch(error => {
-        console.log(error)
-      })
+  componentWillMount = () => {
+    this.props.fetchBooks()
   }
 
   render() {
-    const image = this.state.books.map(val => {
+    const image = this.props.books.map(val => {
       return (
         <div className="store-parent" key={val.title}>
           <div className="image-div" >
@@ -53,6 +49,15 @@ class ProductListContainer extends Component {
   }
 }
 
+// VERY shaky abou
+ProductListContainer.propTypes = {
+  fetchBooks: PropTypes.func.isRequired,
+  books: PropTypes.array.isRequired
+}
 
+const mapStateToProps = state => ({
+  // unsure about this!!
+  books: state.books.items
+})
 
-export default ProductListContainer;
+export default connect(mapStateToProps, { fetchBooks })(ProductListContainer);
